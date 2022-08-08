@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+
+
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+    <div class="loader" id="loader"></div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="" id="image" class="image">
+
+                </div>
+                <div id="description">
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1> Movies</h1>
+        </div>
+        <div class="row upper-part">
+            <h6 id="current-page">         
+            </h6>
+            <h6 id="total-movies">
+            </h6>
+            <h6 id="rating">
+            </h6>
+            <h6 id="top_ratedd">
+            
+            </h6>
+
+
+
+        </div>
+        <div class="row main-page ">
+            <div class="row" id="list">
+
+
+            </div>
+
+        </div>
+        <div class="row pagination">
+            <button class="button" id="next-button">
+                Next
+            </button>
+            <button class="button" id="prev-button">
+                Previous
+            </button>
+
+
+        </div>
+    </div>
+
+
+
+    <script id="Movie-template" type="text/template">
+            {{#movies}}
+      
+            <div class="col-12 col-xl-4 col-lg-4 col-md-4 ">
+              <div class="card cardview text-center justify-content-center align-content-center  ">
+            
+                  <img src="https://image.tmdb.org/t/p/original/{{poster_path}}"
+                      class="card-img-top images " data-bs-toggle="modal" data-bs-target="#myModal" alt="..." id={{id}}  >
+                  <div  class="card-body " >   
+                      <h6 class="card-subtitle mb-2 text-uppercase color ">{{title}}</h6>
+                      <p class="card-text medium-size" >{{vote_average}} </p>
+                       
+              </div>
+            </div>
+          
+          </div>  
+            {{/movies}}
+          </script>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</body>
+
+</html>
